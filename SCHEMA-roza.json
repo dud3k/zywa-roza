@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dud3k.github.io/zywa-roza/SCHEMA-roza.json",
+  "title": "Publiczny plik róży (display-name only)",
+  "description": "Kontrakt publiczny roze/*.json — wyłącznie dane bezpieczne do upublicznienia. Telefony i pełne nazwiska są zakazane (ADR_003).",
+  "type": "object",
+  "required": ["nazwa", "kotwica", "osoby"],
+  "additionalProperties": false,
+  "properties": {
+    "nazwa": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kotwica": {
+      "type": "object",
+      "required": ["rok", "miesiac"],
+      "additionalProperties": false,
+      "properties": {
+        "rok": {
+          "type": "integer",
+          "minimum": 2020
+        },
+        "miesiac": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        }
+      }
+    },
+    "osoby": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["poz", "displayName"],
+        "additionalProperties": false,
+        "properties": {
+          "poz": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
