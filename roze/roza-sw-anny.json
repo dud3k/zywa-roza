@@ -1,0 +1,26 @@
+{
+  "nazwa": "Róża św. Anny",
+  "kotwica": { "rok": 2026, "miesiac": 1 },
+  "osoby": [
+    { "poz": 1,  "displayName": "Marcin D." },
+    { "poz": 2,  "displayName": "Magdalena N." },
+    { "poz": 3,  "displayName": "Anna Ko." },
+    { "poz": 4,  "displayName": "Teresa G." },
+    { "poz": 5,  "displayName": "Emilia C." },
+    { "poz": 6,  "displayName": "Mariola K." },
+    { "poz": 7,  "displayName": "Halina W." },
+    { "poz": 8,  "displayName": "Marzena K." },
+    { "poz": 9,  "displayName": "Jolanta M." },
+    { "poz": 10, "displayName": "Krystyna P." },
+    { "poz": 11, "displayName": "Anna Kw." },
+    { "poz": 12, "displayName": "Joanna G." },
+    { "poz": 13, "displayName": "Barbara K." },
+    { "poz": 14, "displayName": "Agnieszka K." },
+    { "poz": 15, "displayName": "Katarzyna K." },
+    { "poz": 16, "displayName": "Anna M." },
+    { "poz": 17, "displayName": "Ilona R." },
+    { "poz": 18, "displayName": "Joanna J." },
+    { "poz": 19, "displayName": "Elżbieta K." },
+    { "poz": 20, "displayName": "Karolina B." }
+  ]
+}
