@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = resolve(__dirname, "..");
-const rozeDir = join(rootDir, "roze");
+const rozeDir = join(rootDir, "public", "roze");
 const schemaPath = join(rootDir, "SCHEMA-roza.json");
 
 const ajv = new Ajv2020({ allErrors: true });
@@ -16,7 +16,7 @@ const validate = ajv.compile(schema);
 const files = readdirSync(rozeDir).filter((f) => f.endsWith(".json"));
 
 if (files.length === 0) {
-  console.log("walidacja schematu — brak róż w roze/ (exit 0)");
+  console.log("walidacja schematu — brak róż w public/roze/ (exit 0)");
   process.exit(0);
 }
 
