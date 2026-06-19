@@ -1,26 +1,204 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ====== MOTYWY BARW (witraż) ====== */
+:root,[data-theme="stonowany"]{
+  --R:oklch(0.71 0.10 78);   /* Radosne — antyczne złoto */
+  --S:oklch(0.575 0.092 245);/* Światła — lazur */
+  --B:oklch(0.545 0.115 22); /* Bolesne — granat */
+  --CH:oklch(0.545 0.10 330);/* Chwalebne — ametyst */
+}
+[data-theme="zywy"]{
+  --R:oklch(0.76 0.155 80);
+  --S:oklch(0.55 0.16 250);
+  --B:oklch(0.55 0.19 25);
+  --CH:oklch(0.50 0.16 320);
+}
+[data-theme="sepia"]{
+  --R:oklch(0.70 0.085 70);
+  --S:oklch(0.58 0.055 55);
+  --B:oklch(0.48 0.075 45);
+  --CH:oklch(0.40 0.045 50);
 }
 
-body {
-  font-family: system-ui, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #fff9f9;
-  color: #333;
+/* ====== TŁO / PODŁOŻE ====== */
+:root,[data-bg="kosc"]{
+  --tlo:oklch(0.972 0.008 85);
+  --karta:oklch(0.995 0.004 90);
+  --tekst:oklch(0.26 0.012 70);
+  --przyciem:oklch(0.50 0.013 65);
+  --linia:oklch(0.90 0.010 80);
+  --pole:oklch(0.95 0.012 82);
+}
+[data-bg="biel"]{
+  --tlo:oklch(0.99 0.002 90);
+  --karta:#ffffff;
+  --tekst:oklch(0.24 0.010 65);
+  --przyciem:oklch(0.48 0.012 60);
+  --linia:oklch(0.91 0.006 80);
+  --pole:oklch(0.965 0.006 82);
 }
 
-main {
-  text-align: center;
-  padding: 2rem;
-}
+/* FIX: --akcent musi być w :root, inaczej podświetlenie miesiąca w tabeli nie działa */
+:root{ --akcent:var(--CH); }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #8b1a2e;
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:'Lora',Georgia,'Times New Roman',serif;
+  background:var(--tlo); color:var(--tekst);
+  font-size:24px; line-height:1.5; -webkit-text-size-adjust:100%;
+  text-rendering:optimizeLegibility;
+}
+.ekran{max-width:600px;margin:0 auto;padding:8px 22px 56px;min-height:100vh}
+.hidden{display:none}
+
+h1{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:2.1rem;
+  margin:.15em 0 .12em;line-height:1.12;letter-spacing:.2px}
+.pod{color:var(--przyciem);margin:.2em 0 1.3rem;font-size:1.02rem;line-height:1.45}
+
+.link{display:inline-flex;align-items:center;gap:.3em;background:none;border:none;
+  color:var(--akcent);font-family:'Lora',serif;font-size:1.08rem;cursor:pointer;
+  padding:12px 4px;font-weight:500}
+.link:hover{text-decoration:underline}
+.powrot{margin:6px 0 10px;font-size:1.1rem}
+
+/* ====== PRZEŁĄCZNIK WIDOKU ====== */
+.przelacznik{display:flex;gap:8px;margin:6px 0 18px;padding:5px;
+  background:var(--pole);border:1px solid var(--linia);border-radius:16px}
+.przelacznik button{
+  flex:1;padding:14px 8px;border:none;background:transparent;border-radius:11px;
+  font-family:'Lora',serif;font-size:1.06rem;cursor:pointer;color:var(--przyciem);
+  transition:background .15s,color .15s}
+.przelacznik button.akt{background:var(--karta);color:var(--tekst);font-weight:600;
+  box-shadow:0 1px 4px rgba(40,30,60,.10)}
+
+/* ====== LEGENDA ====== */
+.legenda{display:flex;flex-wrap:wrap;gap:10px 18px;margin:4px 2px 16px;
+  color:var(--przyciem);font-size:.96rem}
+.legenda span{display:inline-flex;align-items:center;gap:8px}
+.kropka{width:18px;height:18px;border-radius:5px;display:inline-block;
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45),0 1px 2px rgba(0,0,0,.12)}
+
+.kom{--kc:var(--CH);background:var(--kc);color:#fff;border-radius:8px;padding:5px 11px;font-weight:600;font-family:'Lora',serif;
+  display:inline-block;min-width:42px;text-align:center;letter-spacing:.3px;
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.30)}
+[data-chip="stonowany"] .kom{
+  background:color-mix(in srgb,var(--kc) 20%,white);
+  color:var(--tekst);font-weight:700;
+  box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--kc) 62%,white)}
+
+/* ====== WIDOK KOMPAKTOWY ====== */
+.kompakt{list-style:none;margin:0;padding:0}
+.kompakt li{margin:0 0 12px}
+.wiersz{
+  display:flex;align-items:center;gap:14px;width:100%;text-align:left;cursor:pointer;
+  font-family:'Lora',Georgia,serif;
+  background:var(--karta);border:1px solid var(--linia);border-radius:18px;
+  padding:18px 18px;color:var(--tekst);min-height:72px;
+  box-shadow:0 1px 3px rgba(40,30,60,.05);transition:box-shadow .15s,transform .05s}
+.wiersz:hover{box-shadow:0 4px 16px rgba(40,30,60,.10)}
+.wiersz:active{transform:scale(.992);background:var(--pole)}
+.wiersz .imie-l{flex:1;font-size:1.3rem;font-weight:500}
+.wiersz .kom{font-size:1.2rem;padding:9px 18px;min-width:58px;border-radius:10px}
+.wiersz .strz{color:color-mix(in oklch,var(--przyciem) 70%,transparent);font-size:1.5rem;font-family:'Lora',serif}
+
+/* ====== WIDOK PEŁNEGO ROKU ====== */
+.tabela-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--linia);
+  border-radius:18px;background:var(--karta);box-shadow:0 1px 3px rgba(40,30,60,.05)}
+table{border-collapse:collapse;width:100%;font-size:1rem}
+th,td{padding:11px 7px;text-align:center;white-space:nowrap;border-bottom:1px solid var(--linia)}
+tbody tr:last-child td{border-bottom:none}
+th.nazw,td.nazw{text-align:left;position:sticky;left:0;background:var(--karta);z-index:1;
+  min-width:138px;font-weight:600;cursor:pointer;font-size:1.05rem}
+td.nazw:active{background:var(--pole)}
+td.nazw .strz{color:var(--przyciem);font-size:.95rem;margin-left:5px}
+thead th{background:var(--pole);font-family:'Playfair Display',serif;font-weight:600;font-size:.92rem}
+thead th.teraz{background:var(--akcent);color:#fff;border-radius:8px 8px 0 0}
+td.teraz-col{background:color-mix(in srgb,var(--akcent) 13%,transparent)}
+th.teraz,td.teraz-col{box-shadow:inset 2px 0 0 var(--akcent), inset -2px 0 0 var(--akcent)}
+tbody tr:last-child td.teraz-col{box-shadow:inset 2px 0 0 var(--akcent), inset -2px 0 0 var(--akcent), inset 0 -3px 0 var(--akcent)}
+.tabela-wrap .kom{min-width:34px;padding:4px 5px;font-size:.86rem}
+.notka{color:var(--przyciem);font-size:.92rem;margin-top:12px;line-height:1.45;font-style:italic}
+
+/* ====== KARTA OSOBY ====== */
+.karta-osoby{background:var(--karta);border:1px solid var(--linia);border-radius:26px;
+  overflow:hidden;box-shadow:0 10px 40px rgba(50,35,70,.10)}
+.pasek-tajemnicy{height:16px;background:var(--akcent)}
+
+.karta-tresc{padding:28px 26px 30px}
+.imie{font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;margin:0 0 4px;line-height:1.1}
+.wstep{color:var(--przyciem);margin:0 0 20px;font-size:1.05rem}
+.zestaw-etykieta{--kc:var(--CH);display:inline-block;background:var(--kc);color:#fff;font-weight:600;border-radius:10px;
+  padding:8px 20px;font-size:1.05rem;letter-spacing:.4px;font-family:'Lora',serif;
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.30)}
+[data-chip="stonowany"] .zestaw-etykieta{
+  background:color-mix(in srgb,var(--kc) 20%,white);
+  color:var(--tekst);font-weight:700;
+  box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--kc) 62%,white)}
+.tajemnica-num{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:600;
+  line-height:1.15;margin:18px 0 4px}
+.tajemnica-nazwa{font-family:'Playfair Display',serif;font-size:2.05rem;font-weight:600;
+  margin:0 0 6px;line-height:1.15;letter-spacing:.2px}
+
+/* ====== ROZWAŻANIE (NOWOŚĆ) ====== */
+.rozwazanie{margin-top:18px;background:var(--pole);
+  border:1px solid var(--linia);border-left:5px solid var(--akcent);border-radius:14px;
+  padding:18px 20px;font-size:1.02rem;line-height:1.6;color:var(--tekst);font-style:italic}
+
+.modlitwy{margin-top:22px;background:var(--pole);
+  border:1px solid var(--linia);border-left:5px solid var(--akcent);border-radius:14px;
+  padding:18px 20px;font-size:1.05rem;line-height:1.5}
+.modlitwy b{display:block;margin-bottom:6px;font-family:'Playfair Display',serif;font-weight:600;font-size:1.05rem}
+.stepper{display:flex;align-items:center;justify-content:space-between;margin-top:26px;gap:12px}
+.stepper-gora{margin-top:0;margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid var(--linia)}
+.stepper button{flex:0 0 auto;width:62px;height:62px;border-radius:50%;
+  border:1px solid var(--linia);background:var(--karta);font-size:1.8rem;cursor:pointer;
+  color:var(--tekst);font-family:'Lora',serif;line-height:1;
+  box-shadow:0 1px 3px rgba(40,30,60,.06);transition:background .12s}
+.stepper button:hover{background:var(--pole)}
+.stepper button:active{background:var(--linia)}
+.stepper .mc{flex:1;text-align:center;font-family:'Playfair Display',serif;font-size:1.45rem;
+  font-weight:600;text-transform:capitalize}
+
+/* ====== EKRAN BŁĘDU ====== */
+.ekran-blad{text-align:center;padding:40px 22px}
+.ekran-blad p{color:var(--przyciem);font-size:1.1rem;margin-top:1rem;line-height:1.6}
+
+/* ====== EKRAN POWITALNY (brak ?r) ====== */
+.ekran-powitalny{text-align:center;padding:60px 22px}
+.ekran-powitalny p{color:var(--przyciem);font-size:1.1rem;margin-top:1rem;line-height:1.6}
+
+/* ====== DRUKOWANIE ====== */
+@media print {
+  /* Ukryj elementy nawigacji i interaktywne */
+  .przelacznik,
+  .legenda,
+  .notka,
+  .powrot,
+  button,
+  .stepper {
+    display: none !important;
+  }
+  /* Pokaż tylko tytuł i tabelę roku */
+  #hub-kompakt {
+    display: none !important;
+  }
+  #hub-rok-wrap {
+    display: block !important;
+  }
+  .tabela-wrap {
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+  }
+  body {
+    font-size: 10pt;
+    background: white;
+  }
+  .ekran {
+    padding: 0;
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 16pt;
+    margin-bottom: 8pt;
+  }
 }
