@@ -1,0 +1,89 @@
+{
+  "nazwa": "Róża Przykładowa 2026",
+  "kotwica": {
+    "rok": 2026,
+    "miesiac": 1
+  },
+  "osoby": [
+    {
+      "poz": 1,
+      "displayName": "Anna K."
+    },
+    {
+      "poz": 2,
+      "displayName": "Marek N."
+    },
+    {
+      "poz": 3,
+      "displayName": "Karolina i Łukasz B."
+    },
+    {
+      "poz": 4,
+      "displayName": "Zofia W."
+    },
+    {
+      "poz": 5,
+      "displayName": "Piotr W."
+    },
+    {
+      "poz": 6,
+      "displayName": "Monika K."
+    },
+    {
+      "poz": 7,
+      "displayName": "Tomasz L."
+    },
+    {
+      "poz": 8,
+      "displayName": "Agnieszka D."
+    },
+    {
+      "poz": 9,
+      "displayName": "Krzysztof Z."
+    },
+    {
+      "poz": 10,
+      "displayName": "Barbara S."
+    },
+    {
+      "poz": 11,
+      "displayName": "Andrzej W."
+    },
+    {
+      "poz": 12,
+      "displayName": "Marta K."
+    },
+    {
+      "poz": 13,
+      "displayName": "Michal J."
+    },
+    {
+      "poz": 14,
+      "displayName": "Katarzyna W."
+    },
+    {
+      "poz": 15,
+      "displayName": "Stanislaw K."
+    },
+    {
+      "poz": 16,
+      "displayName": "Ewa K."
+    },
+    {
+      "poz": 17,
+      "displayName": "Rafal M."
+    },
+    {
+      "poz": 18,
+      "displayName": "Dorota P."
+    },
+    {
+      "poz": 19,
+      "displayName": "Jacek G."
+    },
+    {
+      "poz": 20,
+      "displayName": "Bozena N."
+    }
+  ]
+}
