@@ -1,0 +1,89 @@
+{
+  "nazwa": "Róża Różańcowa św. Siostry Faustyny",
+  "kotwica": {
+    "rok": 2025,
+    "miesiac": 1
+  },
+  "osoby": [
+    {
+      "poz": 1,
+      "displayName": "Jakub R."
+    },
+    {
+      "poz": 2,
+      "displayName": "Małgorzata R."
+    },
+    {
+      "poz": 3,
+      "displayName": "Urszula J."
+    },
+    {
+      "poz": 4,
+      "displayName": "Wojciech M."
+    },
+    {
+      "poz": 5,
+      "displayName": "Monika M."
+    },
+    {
+      "poz": 6,
+      "displayName": "Irena K."
+    },
+    {
+      "poz": 7,
+      "displayName": "Zofia C."
+    },
+    {
+      "poz": 8,
+      "displayName": "Anna Jac."
+    },
+    {
+      "poz": 9,
+      "displayName": "Agnieszka A."
+    },
+    {
+      "poz": 10,
+      "displayName": "Danuta Z."
+    },
+    {
+      "poz": 11,
+      "displayName": "Małgorzata K."
+    },
+    {
+      "poz": 12,
+      "displayName": "Katarzyna K."
+    },
+    {
+      "poz": 13,
+      "displayName": "Ewelina D."
+    },
+    {
+      "poz": 14,
+      "displayName": "Stanisława K."
+    },
+    {
+      "poz": 15,
+      "displayName": "Ewa S."
+    },
+    {
+      "poz": 16,
+      "displayName": "Joanna S."
+    },
+    {
+      "poz": 17,
+      "displayName": "Ewa P."
+    },
+    {
+      "poz": 18,
+      "displayName": "Jadwiga P."
+    },
+    {
+      "poz": 19,
+      "displayName": "Anna Jan."
+    },
+    {
+      "poz": 20,
+      "displayName": "Alina R."
+    }
+  ]
+}
